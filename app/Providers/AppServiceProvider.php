@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(PaymentRepository::class, function ($app) {
             return new PaymentRepository();
-        });
+        });  
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\PaymentRepository;
+use Inertia\Inertia;
 
 class PaymentController extends Controller
 {
@@ -12,6 +13,11 @@ class PaymentController extends Controller
     public function __construct(PaymentRepository $paymentRepository)
     {
         $this->paymentRepository = $paymentRepository;
+    }
+
+    public function index()
+    {
+        return Inertia::render('app');
     }
 
     public function createPayment(Request $request)
